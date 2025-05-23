@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "df8d0733-e895-4cef-b3a8-9f1fea4241a3",
+		"name": "CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45038205",
+		"_collection_link": "https://oldlar.postman.co/workspace/number~7e6ad6a2-5250-4e24-b97a-0643e009746a/collection/45038205-df8d0733-e895-4cef-b3a8-9f1fea4241a3?action=share&source=collection_link&creator=45038205"
+	},
+	"item": [
+		{
+			"name": "yeni post yarat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Sparkle Angel\",\r\n  \"age\": 2,\r\n  \"colour\": \"blue\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://crudcrud.com/api/21b90cf30b2d49a0878e94081321aef5/unicorns",
+					"protocol": "https",
+					"host": [
+						"crudcrud",
+						"com"
+					],
+					"path": [
+						"api",
+						"21b90cf30b2d49a0878e94081321aef5",
+						"unicorns"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postu elde et",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"name=bekir\", function(){\r",
+							"    pm.expect(pm.response.json().name).to.eql(\"bekir\");\r",
+							"});\r",
+							"pm.test(\"age\", function(){\r",
+							"    pm.expect(pm.response.json().age).to.eql(21);\r",
+							"});\r",
+							" pm.test(\"status code is 200\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							" });"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://crudcrud.com/api/21b90cf30b2d49a0878e94081321aef5/unicorns/6830fd1e92a00f03e853c7aa",
+					"protocol": "https",
+					"host": [
+						"crudcrud",
+						"com"
+					],
+					"path": [
+						"api",
+						"21b90cf30b2d49a0878e94081321aef5",
+						"unicorns",
+						"6830fd1e92a00f03e853c7aa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postu deyis(yenile)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"bekir\",\r\n  \"age\": 21,\r\n  \"colour\": \"green\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://crudcrud.com/api/21b90cf30b2d49a0878e94081321aef5/unicorns/6830fd1e92a00f03e853c7aa",
+					"protocol": "https",
+					"host": [
+						"crudcrud",
+						"com"
+					],
+					"path": [
+						"api",
+						"21b90cf30b2d49a0878e94081321aef5",
+						"unicorns",
+						"6830fd1e92a00f03e853c7aa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postu sil",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
